@@ -3,25 +3,44 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>piximr</title>
+    <title>piximr</title>
 
-<link rel="stylesheet" href="style.css">
+    <meta name="description"
+          content="piximr | Art • Design • Technology">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
 </head>
-
 
 <body>
 
 
-<!-- Loading Screen -->
+
+<!-- ===========================
+LOADER
+=========================== -->
 
 <div class="loader">
 
     <div class="loader-logo">
-        piximr
+
+        <span>piximr</span>
+
     </div>
 
 </div>
@@ -30,26 +49,49 @@
 
 
 
-<!-- Navigation -->
+<!-- ===========================
+BACKGROUND LIGHTS
+=========================== -->
+
+<div class="ambient ambient-1"></div>
+
+<div class="ambient ambient-2"></div>
+
+<div class="noise"></div>
+
+
+
+
+
+<!-- ===========================
+NAVBAR
+=========================== -->
 
 <header class="navbar">
 
-    <div class="logo">
+    <div class="nav-logo">
+
         piximr
+
     </div>
 
 
-    <nav>
+
+    <nav class="nav-menu">
 
         <a href="#">Home</a>
+
         <a href="#explore">Projects</a>
-        <a href="#">Gallery</a>
-        <a href="#">Journal</a>
-        <a href="#">About</a>
+
+        <a href="gallery.html">Gallery</a>
+
+        <a href="journal.html">Journal</a>
+
+        <a href="about.html">About</a>
+
         <a href="#contact">Contact</a>
 
     </nav>
-
 
 </header>
 
@@ -57,348 +99,355 @@
 
 
 
-
-<!-- Hero -->
+<!-- ===========================
+HERO
+=========================== -->
 
 <section class="hero">
 
+    <video
+        autoplay
+        muted
+        loop
+        playsinline>
 
-    <video autoplay muted loop playsinline>
-
-        <source src="assets/videos/hero.mp4" type="video/mp4">
+        <source
+            src="assets/videos/hero.mp4"
+            type="video/mp4">
 
     </video>
 
-
-    <div class="overlay"></div>
-
-
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
+        <p class="eyebrow">
 
-        <h1>
-            piximr
-        </h1>
+            Art • Design • Technology
 
-
-        <p>
-            A creative ecosystem where art,
-            design and imagination become reality.
         </p>
 
+        <h1>
+
+            piximr
+
+        </h1>
+
+        <p class="hero-description">
+
+            A creative ecosystem where imagination,
+            craftsmanship and technology meet.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="https://cal.com/piximr"
+               target="_blank"
+               class="primary-btn">
+
+                Book a Meeting
+
+            </a>
+
+            <a href="#explore"
+               class="secondary-btn">
+
+                Explore Work
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-        <a href="#contact" class="hero-button">
-            Book a Project
-        </a>
 
 
+
+<!-- ===========================
+EXPLORE PIXIMR
+=========================== -->
+
+<section
+    id="explore"
+    class="explore">
+
+    <div class="section-heading">
+
+        <h2>
+
+            Explore piximr
+
+        </h2>
+
+        <p>
+
+            Explore different creative disciplines.
+
+        </p>
 
     </div>
 
 
-</section>
 
+    <div class="project-slider">
+                <!-- Card 01 -->
+        <a class="project-card"
+           href="projects/3d-visualization.html">
 
+            <div class="project-image">
 
+                <img src="assets/images/3d-cover.webp"
+                     alt="3D Visualization">
 
+                <div class="project-gradient"></div>
 
+                <div class="project-title">
 
-<!-- Explore piximr -->
+                    3D Visualization
 
+                </div>
 
-<section class="explore" id="explore">
+            </div>
 
+        </a>
 
-<div class="section-title">
 
-<h2>
-Explore piximr
-</h2>
 
+        <!-- Card 02 -->
+        <a class="project-card"
+           href="projects/product-design.html">
 
-<p>
-Explore our creative dimensions.
-</p>
+            <div class="project-image">
 
+                <img src="assets/images/product-cover.webp"
+                     alt="Product Design">
 
-</div>
+                <div class="project-gradient"></div>
 
+                <div class="project-title">
 
+                    Product Design
 
+                </div>
 
-<div class="carousel">
+            </div>
 
+        </a>
 
 
 
+        <!-- Card 03 -->
+        <a class="project-card"
+           href="projects/game-design.html">
 
-<div class="project-card">
+            <div class="project-image">
 
+                <img src="assets/images/game-cover.webp"
+                     alt="Game Design">
 
-<div class="card-image">
+                <div class="project-gradient"></div>
 
+                <div class="project-title">
 
-<div class="card-overlay">
+                    Game Design
 
-<h3>
-3D Visualization
-</h3>
+                </div>
 
-</div>
+            </div>
 
+        </a>
 
-</div>
 
 
-</div>
+        <!-- Card 04 -->
+        <a class="project-card"
+           href="projects/personal-art.html">
 
+            <div class="project-image">
 
+                <img src="assets/images/art-cover.webp"
+                     alt="Personal Art">
 
+                <div class="project-gradient"></div>
 
+                <div class="project-title">
 
-<div class="project-card">
+                    Personal Art
 
+                </div>
 
-<div class="card-image">
+            </div>
 
+        </a>
 
-<div class="card-overlay">
 
-<h3>
-Product Design
-</h3>
 
-</div>
+        <!-- Card 05 -->
+        <a class="project-card"
+           href="projects/architectural-design.html">
 
+            <div class="project-image">
 
-</div>
+                <img src="assets/images/architecture-cover.webp"
+                     alt="Architectural Design">
 
+                <div class="project-gradient"></div>
 
-</div>
+                <div class="project-title">
 
+                    Architectural Design
 
+                </div>
 
+            </div>
 
+        </a>
 
-<div class="project-card">
 
 
-<div class="card-image">
+        <!-- Card 06 -->
+        <a class="project-card"
+           href="projects/branding.html">
 
+            <div class="project-image">
 
-<div class="card-overlay">
+                <img src="assets/images/branding-cover.webp"
+                     alt="Branding">
 
-<h3>
-Game Design
-</h3>
+                <div class="project-gradient"></div>
 
-</div>
+                <div class="project-title">
 
+                    Branding
 
-</div>
+                </div>
 
+            </div>
 
-</div>
+        </a>
 
-
-
-
-<div class="project-card">
-
-
-<div class="card-image">
-
-
-<div class="card-overlay">
-
-<h3>
-Personal Art
-</h3>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="project-card">
-
-
-<div class="card-image">
-
-
-<div class="card-overlay">
-
-<h3>
-Architectural Design
-</h3>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="project-card">
-
-
-<div class="card-image">
-
-
-<div class="card-overlay">
-
-<h3>
-Branding
-</h3>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-</div>
-
+    </div>
 
 </section>
 
 
 
-
-
-
-
-<!-- Signature Experience -->
-
+<!-- ===========================
+SIGNATURE EXPERIENCE
+=========================== -->
 
 <section class="signature">
 
+    <div class="signature-content">
 
-<h2>
-Every pixel has a purpose.
-</h2>
+        <h2>
 
+            Every pixel has a purpose.
 
-<p>
+        </h2>
 
-Art, design and technology combined into meaningful
-visual experiences.
+        <p>
 
-</p>
+            We believe thoughtful design creates meaningful
+            experiences. Every project is crafted with
+            intention, precision and artistic vision.
 
+        </p>
+
+    </div>
 
 </section>
-
-
-
-
-
-
-
-
-<!-- Contact -->
-
+<!-- ===========================
+CONTACT
+=========================== -->
 
 <section class="contact" id="contact">
 
+    <div class="contact-content">
 
-<h2>
-Let's create something meaningful.
-</h2>
+        <p class="contact-label">
+            Let's create something meaningful.
+        </p>
 
+        <h2>
+            Start your next project with piximr.
+        </h2>
 
-<p>
-Have a project in mind?
-</p>
+        <p class="contact-text">
+            Whether it's architectural visualization, branding,
+            product design, game art or personal commissions,
+            I'd love to hear about your idea.
+        </p>
 
+        <div class="contact-actions">
 
+            <a href="https://cal.com/piximr"
+               target="_blank"
+               class="contact-btn primary">
 
-<div class="contact-buttons">
+                Book a Meeting
 
+            </a>
 
+            <a href="mailto:piximrstudio@gmail.com"
+               class="contact-btn">
 
-<a href="https://cal.com/piximr" target="_blank">
+                Email
 
-<span>📅</span>
-Book a Meeting
+            </a>
 
-</a>
+            <a href="https://wa.me/8801825558999"
+               target="_blank"
+               class="contact-btn">
 
+                WhatsApp
 
+            </a>
 
+        </div>
 
-<a href="mailto:piximrstudio@gmail.com">
-
-<span>✉</span>
-Email
-
-</a>
-
-
-
-
-<a href="https://wa.me/8801825558999" target="_blank">
-
-<span>◉</span>
-WhatsApp
-
-</a>
-
-
-
-
-</div>
-
+    </div>
 
 </section>
 
 
 
+<!-- ===========================
+FOOTER
+=========================== -->
 
+<footer class="footer">
 
+    <div class="footer-left">
 
-<footer>
+        <div class="footer-logo">
+            piximr
+        </div>
 
+        <p>
+            Every pixel has a purpose.
+        </p>
 
-<p>
-Every pixel has a purpose.
-</p>
+    </div>
 
+    <div class="footer-right">
 
-<span>
-© piximr
-</span>
+        <a href="#explore">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="journal.html">Journal</a>
+        <a href="about.html">About</a>
 
+    </div>
 
 </footer>
 
 
 
-
-
 <script src="script.js"></script>
 
-
 </body>
-
 </html>
