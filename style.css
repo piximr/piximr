@@ -1734,3 +1734,145 @@ RESPONSIVE
     }
 
 }
+/* Piximr AI Chat Window */
+
+.piximr-chat-window {
+
+    position: fixed;
+
+    right: 30px;
+    bottom: 120px;
+
+    width: 340px;
+
+    background:
+    rgba(255,255,255,0.18);
+
+    backdrop-filter:
+    blur(20px);
+
+    -webkit-backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,0.3);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+    0 15px 50px rgba(0,0,0,0.2);
+
+    z-index: 9998;
+
+    display: none;
+
+}
+
+
+/* Header */
+
+.chat-header {
+
+    padding:18px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:
+    rgba(0,0,0,0.25);
+
+}
+
+
+#chat-close {
+
+    float:right;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+}
+
+
+/* Messages */
+
+.chat-messages {
+
+    height:260px;
+
+    padding:20px;
+
+    overflow-y:auto;
+
+    color:white;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+
+/* Input */
+
+.chat-input-area {
+
+    display:flex;
+
+    padding:12px;
+
+    gap:8px;
+
+}
+
+
+#chat-input {
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,0.25);
+
+    color:white;
+
+}
+
+
+#chat-input::placeholder {
+
+    color:white;
+
+    opacity:.7;
+
+}
+
+
+#chat-send {
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:12px 16px;
+
+    cursor:pointer;
+
+    background:white;
+
+    color:black;
+
+}
