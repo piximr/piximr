@@ -1367,110 +1367,117 @@ JOURNAL PAGE
     }
 
 }
-.about-section {
-    width: 85%;
-    max-width: 1000px;
-    margin: 60px auto;
+    /*==========================
+ABOUT PAGE
+==========================*/
+
+.about-section,
+.services,
+.philosophy,
+.contact-cta{
+    width:min(1100px,90%);
+    margin:100px auto;
+    text-align:center;
 }
 
-.about-content {
-    text-align: center;
-}
 
 .about-content h2,
 .services h2,
-.philosophy h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #222;
+.philosophy h2,
+.contact-cta h2{
+
+    font-size:clamp(36px,5vw,56px);
+    letter-spacing:-2px;
+    margin-bottom:25px;
+
 }
 
+
 .about-content p,
-.philosophy p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 15px;
+.philosophy p{
+
+    color:var(--text);
+    font-size:18px;
+    line-height:1.9;
+    max-width:800px;
+    margin:15px auto;
+
 }
 
 
 /* Services */
 
-.services {
-    width: 85%;
-    max-width: 1000px;
-    margin: 60px auto;
-    text-align: center;
-}
+.service-grid{
 
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 30px;
-}
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:50px;
 
-.service-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.service-card h3 {
-    margin-bottom: 15px;
-    color: #222;
-}
-
-.service-card p {
-    color: #666;
-    line-height: 1.7;
 }
 
 
-/* Philosophy */
+.service-card{
 
-.philosophy {
-    width: 85%;
-    max-width: 900px;
-    margin: 60px auto;
-    text-align: center;
+    padding:35px;
+
+    border-radius:28px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(28px);
+
+    transition:var(--transition);
+
 }
 
 
-/* Contact CTA */
+.service-card:hover{
 
-.contact-cta {
-    text-align: center;
-    padding: 60px 20px;
-}
+    transform:translateY(-8px);
 
-.contact-cta h2 {
-    margin-bottom: 25px;
-}
+    border-color:rgba(123,92,255,.35);
 
-.contact-cta a {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #222;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
 }
 
 
-/* Mobile */
+.service-card h3{
 
-@media(max-width:700px){
+    font-size:22px;
+    margin-bottom:15px;
 
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
+}
 
-    .about-content h2,
-    .services h2,
-    .philosophy h2 {
-        font-size: 26px;
-    }
+
+.service-card p{
+
+    color:var(--text);
+    line-height:1.8;
+
+}
+
+
+/* CTA */
+
+.contact-cta a{
+
+    display:inline-block;
+    margin-top:20px;
+    padding:16px 34px;
+    border-radius:999px;
+    background:rgba(123,92,255,.25);
+    color:white;
+    text-decoration:none;
+
+}
+
+
+@media(max-width:900px){
+
+.service-grid{
+    grid-template-columns:1fr;
+}
 
 }
