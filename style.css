@@ -143,3 +143,70 @@ nav a:hover {
     }
 
 }
+/* Work Section */
+
+.work {
+    padding: 120px 8%;
+    background: #0b0b0b;
+}
+
+.work h2 {
+    font-size: 50px;
+    margin-bottom: 60px;
+}
+
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+.work-card {
+
+    padding: 40px;
+
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 25px;
+
+    transition: .4s ease;
+
+}
+
+
+.work-card:hover {
+
+    transform: translateY(-10px);
+
+    background: rgba(255,255,255,0.1);
+
+}
+
+
+.work-card h3 {
+
+    font-size: 28px;
+    margin-bottom: 15px;
+
+}
+
+
+.work-card p {
+
+    opacity: .7;
+    line-height: 1.6;
+
+}
+
+
+@media(max-width:900px){
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
