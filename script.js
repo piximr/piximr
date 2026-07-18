@@ -1,24 +1,32 @@
-
-// Hero entrance
+// Hero smooth entrance
 
 window.addEventListener("load", () => {
 
+
     const hero = document.querySelector(".hero-content");
 
+
     hero.style.opacity = "0";
+
     hero.style.transform = "translateY(40px)";
 
 
-    setTimeout(() => {
+
+    setTimeout(()=>{
+
 
         hero.style.transition = "1.2s ease";
 
+
         hero.style.opacity = "1";
+
 
         hero.style.transform = "translateY(0)";
 
 
+
     },300);
+
 
 
 });
@@ -27,24 +35,38 @@ window.addEventListener("load", () => {
 
 
 
-// Mouse wheel horizontal portfolio scroll
+
+
+// Desktop horizontal scroll
+
 
 const carousel = document.querySelector(".carousel");
 
 
+
 if(carousel){
 
-    carousel.addEventListener("wheel", (e)=>{
+
+    carousel.addEventListener("wheel",(e)=>{
+
 
         if(window.innerWidth > 700){
 
+
             e.preventDefault();
+
 
             carousel.scrollLeft += e.deltaY;
 
+
+
         }
 
+
+
     });
+
+
 
 }
 
@@ -52,9 +74,13 @@ if(carousel){
 
 
 
-// Smooth card reveal on scroll
+
+
+// Project card reveal animation
+
 
 const cards = document.querySelectorAll(".project-card");
+
 
 
 const observer = new IntersectionObserver((entries)=>{
@@ -65,9 +91,12 @@ const observer = new IntersectionObserver((entries)=>{
 
         if(entry.isIntersecting){
 
+
             entry.target.style.opacity="1";
 
+
             entry.target.style.transform="translateY(0)";
+
 
         }
 
@@ -75,7 +104,9 @@ const observer = new IntersectionObserver((entries)=>{
     });
 
 
+
 },{threshold:.2});
+
 
 
 
@@ -85,12 +116,16 @@ cards.forEach(card=>{
 
     card.style.opacity="0";
 
-    card.style.transform="translateY(40px)";
 
-    card.style.transition="0.8s ease";
+    card.style.transform="translateY(50px)";
+
+
+    card.style.transition="all .8s ease";
+
 
 
     observer.observe(card);
+
 
 
 });
