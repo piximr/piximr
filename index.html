@@ -483,11 +483,35 @@ FOOTER
 
 </div>
     <script>
+
+const orb = document.querySelector(".piximr-ai-bubble");
+const chat = document.getElementById("piximr-chat");
+const closeBtn = document.getElementById("chat-close");
+
+
 setTimeout(function(){
 
-    document.querySelector(".piximr-ai-bubble").style.display = "flex";
+    orb.style.display = "flex";
 
-},30000);
+},10000);
+
+
+
+orb.onclick = function(){
+
+    chat.style.display = "block";
+
+};
+
+
+
+closeBtn.onclick = function(){
+
+    chat.style.display = "none";
+
+};
+
+
 </script>
 </body>
 </html>
