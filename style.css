@@ -1367,54 +1367,78 @@ JOURNAL PAGE
     }
 
 }
-    /*==========================
+/*==================================================
 ABOUT PAGE
-==========================*/
+==================================================*/
 
-.about-section,
-.services,
-.philosophy,
-.contact-cta{
+.about-section{
+
     width:min(1100px,90%);
-    margin:100px auto;
+    margin:180px auto 100px;
     text-align:center;
+
 }
 
 
-.about-content h2,
-.services h2,
-.philosophy h2,
-.contact-cta h2{
+.about-content h2{
 
-    font-size:clamp(36px,5vw,56px);
+    font-size:clamp(42px,5vw,64px);
     letter-spacing:-2px;
-    margin-bottom:25px;
+    margin-bottom:30px;
 
 }
 
 
-.about-content p,
-.philosophy p{
+.about-content p{
+
+    max-width:800px;
+    margin:18px auto;
 
     color:var(--text);
+
     font-size:18px;
+
     line-height:1.9;
-    max-width:800px;
-    margin:15px auto;
 
 }
 
 
-/* Services */
+/*==========================
+SERVICES
+==========================*/
+
+
+.services{
+
+    width:min(1100px,90%);
+    margin:100px auto;
+
+    text-align:center;
+
+}
+
+
+.services h2{
+
+    font-size:clamp(40px,5vw,60px);
+    letter-spacing:-2px;
+
+    margin-bottom:50px;
+
+}
+
+
 
 .service-grid{
 
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:25px;
-    margin-top:50px;
 
 }
+
 
 
 .service-card{
@@ -1434,6 +1458,7 @@ ABOUT PAGE
 }
 
 
+
 .service-card:hover{
 
     transform:translateY(-8px);
@@ -1443,41 +1468,140 @@ ABOUT PAGE
 }
 
 
+
 .service-card h3{
 
-    font-size:22px;
-    margin-bottom:15px;
+    font-size:24px;
+
+    margin-bottom:18px;
 
 }
+
 
 
 .service-card p{
 
     color:var(--text);
+
     line-height:1.8;
 
 }
 
 
-/* CTA */
+
+/*==========================
+PHILOSOPHY
+==========================*/
+
+
+.philosophy{
+
+    width:min(900px,90%);
+
+    margin:120px auto;
+
+    text-align:center;
+
+}
+
+
+
+.philosophy h2{
+
+    font-size:clamp(40px,5vw,60px);
+
+    letter-spacing:-2px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.philosophy p{
+
+    color:var(--text);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+
+
+/*==========================
+CONTACT CTA
+==========================*/
+
+
+.contact-cta{
+
+    text-align:center;
+
+    padding:100px 0;
+
+}
+
+
+
+.contact-cta h2{
+
+    font-size:clamp(38px,5vw,60px);
+
+    margin-bottom:30px;
+
+}
+
+
 
 .contact-cta a{
 
     display:inline-block;
-    margin-top:20px;
+
     padding:16px 34px;
+
     border-radius:999px;
-    background:rgba(123,92,255,.25);
+
     color:white;
+
     text-decoration:none;
 
+    border:1px solid rgba(255,255,255,.12);
+
+    background:
+
+    linear-gradient(
+    135deg,
+    rgba(123,92,255,.30),
+    rgba(46,91,255,.20)
+    );
+
+    transition:var(--transition);
+
 }
+
+
+
+.contact-cta a:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*==========================
+RESPONSIVE
+==========================*/
 
 
 @media(max-width:900px){
 
-.service-grid{
-    grid-template-columns:1fr;
-}
+    .service-grid{
+
+        grid-template-columns:1fr;
+
+    }
 
 }
