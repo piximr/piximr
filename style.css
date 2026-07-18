@@ -8,88 +8,182 @@ html{
     scroll-behavior:smooth;
 }
 
+
 body{
-    background:#080808;
+
+    background:#070707;
     color:white;
+
     font-family:Arial, sans-serif;
+
     overflow-x:hidden;
+
+    position:relative;
+
 }
 
 
-/* Navbar */
+/* Noise texture */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+
+    opacity:.07;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+
+
+/* NAVBAR */
+
 
 .navbar{
+
     position:fixed;
+
     top:20px;
     left:50%;
+
     transform:translateX(-50%);
 
     width:90%;
+
     padding:18px 30px;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
+
     background:rgba(255,255,255,.08);
+
     backdrop-filter:blur(20px);
 
+
     border:1px solid rgba(255,255,255,.15);
+
     border-radius:25px;
 
+
     z-index:100;
+
 }
 
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
+
+    font-size:30px;
+
+    font-weight:700;
+
 }
+
 
 
 nav{
+
     display:flex;
+
     gap:25px;
+
 }
+
 
 
 nav a{
+
     color:white;
+
     text-decoration:none;
-    opacity:.8;
+
+    opacity:.75;
+
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    opacity:1;
+
 }
 
 
 
-/* Hero */
+
+
+/* HERO */
+
 
 .hero{
+
     height:100vh;
+
     position:relative;
 
     display:flex;
-    align-items:center;
+
     justify-content:center;
 
+    align-items:center;
+
     text-align:center;
+
 }
+
 
 
 .hero video{
 
     position:absolute;
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
 
 }
 
 
+
 .overlay{
 
     position:absolute;
+
     inset:0;
-    background:rgba(0,0,0,.6);
+
+
+    background:
+
+    radial-gradient(
+    circle at 20% 30%,
+    rgba(35,60,255,.25),
+    transparent 35%
+    ),
+
+
+    radial-gradient(
+    circle at 80% 70%,
+    rgba(255,40,80,.22),
+    transparent 35%
+    ),
+
+
+    rgba(0,0,0,.7);
 
 }
 
@@ -98,40 +192,53 @@ nav a{
 .hero-content{
 
     position:relative;
+
     z-index:2;
 
 }
 
 
+
 .hero h1{
 
     font-size:clamp(80px,15vw,180px);
-    letter-spacing:-5px;
+
+    letter-spacing:-6px;
 
 }
 
 
+
 .hero p{
 
-    font-size:22px;
     max-width:600px;
+
     margin:20px auto 40px;
+
+    font-size:22px;
+
     opacity:.8;
 
 }
 
 
+
 .hero-button{
 
-    padding:15px 35px;
+    padding:16px 40px;
 
     color:white;
+
     text-decoration:none;
+
 
     border-radius:50px;
 
+
     background:rgba(255,255,255,.12);
-    backdrop-filter:blur(15px);
+
+    backdrop-filter:blur(20px);
+
 
     border:1px solid rgba(255,255,255,.2);
 
@@ -140,13 +247,16 @@ nav a{
 
 
 
-/* Explore */
+
+/* EXPLORE */
+
 
 .explore{
 
     padding:120px 5%;
 
 }
+
 
 
 .section-title h2{
@@ -156,30 +266,33 @@ nav a{
 }
 
 
+
 .section-title p{
 
-    opacity:.7;
+    opacity:.6;
+
     margin-top:15px;
 
 }
 
 
 
+
 .carousel{
 
     display:flex;
+
     gap:30px;
 
     margin-top:60px;
 
+
     overflow-x:auto;
+
 
     scroll-snap-type:x mandatory;
 
-    padding-bottom:30px;
-
 }
-
 
 
 .carousel::-webkit-scrollbar{
@@ -190,52 +303,151 @@ nav a{
 
 
 
+
+
 .project-card{
+
 
     min-width:380px;
 
     scroll-snap-align:center;
 
+
+    position:relative;
+
+
+    padding:2px;
+
+
+    overflow:hidden;
+
+    border-radius:28px;
+
 }
+
+
+
+.project-card::before{
+
+
+    content:"";
+
+    position:absolute;
+
+    inset:-80%;
+
+
+    background:
+
+    conic-gradient(
+
+    transparent,
+
+    #2848ff,
+
+    #ff304f,
+
+    #9b30ff,
+
+    transparent
+
+    );
+
+
+    animation:glow 8s linear infinite;
+
+
+}
+
+
+
+.project-card > *{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+
+@keyframes glow{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
 
 
 
 .card-image{
 
-    height:220px;
 
-    background:#050505;
+    height:230px;
 
-    border-radius:25px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(255,255,255,.08),
+
+    rgba(255,255,255,.02)
+
+    );
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:26px;
+
 
     position:relative;
 
-    overflow:hidden;
-
-    border:1px solid rgba(255,255,255,.15);
 
 }
 
 
 
+
 .card-overlay{
+
 
     position:absolute;
 
     inset:0;
 
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
+
     background:rgba(0,0,0,.5);
+
 
     opacity:0;
 
     transition:.4s;
 
 }
-
 
 
 .card-image:hover .card-overlay{
@@ -257,11 +469,93 @@ nav a{
 
 
 
-/* Sections */
 
 
-.about,
-.journal,
+/* SIGNATURE */
+
+
+.signature{
+
+
+    padding:150px 8%;
+
+    text-align:center;
+
+
+}
+
+
+
+.signature h2{
+
+    font-size:60px;
+
+}
+
+
+.signature p{
+
+    margin-top:25px;
+
+    opacity:.7;
+
+}
+
+
+
+
+
+
+/* FEATURED */
+
+
+.featured{
+
+
+    padding:100px 8%;
+
+}
+
+
+.featured h2{
+
+    font-size:50px;
+
+}
+
+
+.featured-grid{
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.featured-grid div{
+
+    height:250px;
+
+    background:#050505;
+
+    border-radius:25px;
+
+}
+
+
+
+
+
+
+/* CONTACT */
+
+
 .contact{
 
     padding:120px 8%;
@@ -269,69 +563,79 @@ nav a{
 }
 
 
-.about h2,
-.journal h2,
 .contact h2{
 
-    font-size:50px;
+    font-size:55px;
 
 }
 
 
-.about p,
-.journal p,
-.contact p{
+.contact a{
 
-    margin-top:20px;
-    opacity:.7;
+    display:block;
+
+    margin-top:30px;
+
+    color:white;
+
+    text-decoration:none;
 
 }
 
 
 
-/* Footer */
+
+
+/* FOOTER */
 
 
 footer{
 
-    padding:60px 8%;
+    padding:50px 8%;
+
     border-top:1px solid rgba(255,255,255,.1);
 
     display:flex;
+
     justify-content:space-between;
 
 }
 
 
-footer p{
-
-    font-size:20px;
-
-}
 
 
-
-/* Mobile */
 
 
 @media(max-width:700px){
 
-    nav{
-        display:none;
-    }
+
+nav{
+
+    display:none;
+
+}
 
 
-    .project-card{
+.project-card{
 
-        min-width:85vw;
+    min-width:85vw;
 
-    }
+}
 
 
-    .section-title h2{
+.signature h2,
+.contact h2{
 
-        font-size:40px;
+    font-size:38px;
 
-    }
+}
+
+
+.featured-grid{
+
+    grid-template-columns:1fr;
+
+}
+
 
 }
