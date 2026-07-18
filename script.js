@@ -1,5 +1,5 @@
 
-// Hero entrance animation
+// Hero entrance
 
 window.addEventListener("load", () => {
 
@@ -12,29 +12,85 @@ window.addEventListener("load", () => {
     setTimeout(() => {
 
         hero.style.transition = "1.2s ease";
+
         hero.style.opacity = "1";
+
         hero.style.transform = "translateY(0)";
 
+
     },300);
+
 
 });
 
 
 
 
-// Horizontal portfolio wheel scroll
+
+// Mouse wheel horizontal portfolio scroll
 
 const carousel = document.querySelector(".carousel");
 
 
 if(carousel){
 
-    carousel.addEventListener("wheel", (event)=>{
+    carousel.addEventListener("wheel", (e)=>{
 
-        event.preventDefault();
+        if(window.innerWidth > 700){
 
-        carousel.scrollLeft += event.deltaY;
+            e.preventDefault();
+
+            carousel.scrollLeft += e.deltaY;
+
+        }
 
     });
 
 }
+
+
+
+
+
+// Smooth card reveal on scroll
+
+const cards = document.querySelectorAll(".project-card");
+
+
+const observer = new IntersectionObserver((entries)=>{
+
+
+    entries.forEach(entry=>{
+
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+
+    });
+
+
+},{threshold:.2});
+
+
+
+
+cards.forEach(card=>{
+
+
+    card.style.opacity="0";
+
+    card.style.transform="translateY(40px)";
+
+    card.style.transition="0.8s ease";
+
+
+    observer.observe(card);
+
+
+});
