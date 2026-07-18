@@ -4,6 +4,7 @@
     box-sizing:border-box;
 }
 
+
 html{
     scroll-behavior:smooth;
 }
@@ -12,6 +13,7 @@ html{
 body{
 
     background:#070707;
+
     color:white;
 
     font-family:Arial, sans-serif;
@@ -23,18 +25,24 @@ body{
 }
 
 
+
 /* Noise texture */
+
 
 body::before{
 
     content:"";
 
     position:fixed;
+
     inset:0;
+
 
     background-image:url("https://grainy-gradients.vercel.app/noise.svg");
 
-    opacity:.07;
+
+    opacity:.08;
+
 
     pointer-events:none;
 
@@ -44,21 +52,30 @@ body::before{
 
 
 
+
+
+
 /* NAVBAR */
 
 
 .navbar{
 
+
     position:fixed;
 
     top:20px;
+
     left:50%;
+
 
     transform:translateX(-50%);
 
+
     width:90%;
 
+
     padding:18px 30px;
+
 
     display:flex;
 
@@ -67,26 +84,35 @@ body::before{
     align-items:center;
 
 
+
     background:rgba(255,255,255,.08);
 
-    backdrop-filter:blur(20px);
+
+    backdrop-filter:blur(25px);
+
 
 
     border:1px solid rgba(255,255,255,.15);
 
-    border-radius:25px;
+
+    border-radius:30px;
+
 
 
     z-index:100;
 
+
 }
+
 
 
 .logo{
 
+
     font-size:30px;
 
     font-weight:700;
+
 
 }
 
@@ -104,15 +130,19 @@ nav{
 
 nav a{
 
+
     color:white;
 
     text-decoration:none;
 
+
     opacity:.75;
+
 
     transition:.3s;
 
 }
+
 
 
 nav a:hover{
@@ -125,22 +155,34 @@ nav a:hover{
 
 
 
+
+
 /* HERO */
 
 
 .hero{
 
+
     height:100vh;
+
 
     position:relative;
 
+
     display:flex;
+
 
     justify-content:center;
 
+
     align-items:center;
 
+
     text-align:center;
+
+
+    overflow:hidden;
+
 
 }
 
@@ -148,52 +190,164 @@ nav a:hover{
 
 .hero video{
 
+
     position:absolute;
+
+
+    inset:0;
+
 
     width:100%;
 
+
     height:100%;
+
 
     object-fit:cover;
 
+
 }
+
+
+
+
+
+
+/* MOVING VIOLET LIGHT */
+
+
+.hero::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+
+    width:650px;
+
+    height:650px;
+
+
+
+
+    background:radial-gradient(
+
+    circle,
+
+    rgba(150,80,255,.45),
+
+    transparent 70%
+
+    );
+
+
+
+    filter:blur(90px);
+
+
+
+    animation:violetMove 14s infinite alternate ease-in-out;
+
+
+
+    z-index:1;
+
+
+}
+
+
+
+
+@keyframes violetMove{
+
+
+0%{
+
+
+transform:translate(-250px,-150px);
+
+opacity:.35;
+
+
+}
+
+
+
+50%{
+
+
+transform:translate(180px,60px);
+
+opacity:.8;
+
+
+}
+
+
+
+
+100%{
+
+
+transform:translate(-80px,220px);
+
+opacity:.45;
+
+
+}
+
+
+}
+
+
+
 
 
 
 .overlay{
 
+
     position:absolute;
+
 
     inset:0;
 
 
+
     background:
 
-    radial-gradient(
-    circle at 20% 30%,
-    rgba(35,60,255,.25),
-    transparent 35%
-    ),
+
+    linear-gradient(
+
+    180deg,
+
+    rgba(0,0,0,.35),
+
+    rgba(0,0,0,.75)
+
+    );
 
 
-    radial-gradient(
-    circle at 80% 70%,
-    rgba(255,40,80,.22),
-    transparent 35%
-    ),
 
+    z-index:1;
 
-    rgba(0,0,0,.7);
 
 }
 
 
 
+
 .hero-content{
+
 
     position:relative;
 
+
     z-index:2;
+
 
 }
 
@@ -201,9 +355,12 @@ nav a:hover{
 
 .hero h1{
 
-    font-size:clamp(80px,15vw,180px);
+
+    font-size:clamp(90px,15vw,180px);
+
 
     letter-spacing:-6px;
+
 
 }
 
@@ -211,13 +368,18 @@ nav a:hover{
 
 .hero p{
 
+
     max-width:600px;
+
 
     margin:20px auto 40px;
 
+
     font-size:22px;
 
+
     opacity:.8;
+
 
 }
 
@@ -225,9 +387,12 @@ nav a:hover{
 
 .hero-button{
 
+
     padding:16px 40px;
 
+
     color:white;
+
 
     text-decoration:none;
 
@@ -235,20 +400,19 @@ nav a:hover{
     border-radius:50px;
 
 
+
     background:rgba(255,255,255,.12);
+
 
     backdrop-filter:blur(20px);
 
 
+
     border:1px solid rgba(255,255,255,.2);
 
+
 }
-
-
-
-
-
-/* EXPLORE */
+/* EXPLORE PIXIMR */
 
 
 .explore{
@@ -269,20 +433,25 @@ nav a:hover{
 
 .section-title p{
 
-    opacity:.6;
-
     margin-top:15px;
+
+    opacity:.6;
 
 }
 
 
 
 
+
+
 .carousel{
+
 
     display:flex;
 
-    gap:30px;
+
+    gap:35px;
+
 
     margin-top:60px;
 
@@ -292,7 +461,12 @@ nav a:hover{
 
     scroll-snap-type:x mandatory;
 
+
+    padding-bottom:20px;
+
+
 }
+
 
 
 .carousel::-webkit-scrollbar{
@@ -305,10 +479,12 @@ nav a:hover{
 
 
 
+
 .project-card{
 
 
     min-width:380px;
+
 
     scroll-snap-align:center;
 
@@ -319,11 +495,15 @@ nav a:hover{
     padding:2px;
 
 
+    border-radius:30px;
+
+
     overflow:hidden;
 
-    border-radius:28px;
 
 }
+
+
 
 
 
@@ -332,62 +512,72 @@ nav a:hover{
 
     content:"";
 
+
     position:absolute;
+
 
     inset:-80%;
 
 
-    background:
 
-    conic-gradient(
+    background:conic-gradient(
 
     transparent,
 
-    #2848ff,
+    #7a4cff,
 
-    #ff304f,
-
-    #9b30ff,
+    #d43cff,
 
     transparent
 
     );
 
 
-    animation:glow 8s linear infinite;
+
+    animation:borderGlow 10s linear infinite;
+
 
 
 }
+
+
+
+
+
+@keyframes borderGlow{
+
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+
+}
+
+
 
 
 
 .project-card > *{
 
+
     position:relative;
+
 
     z-index:2;
 
-}
-
-
-
-
-@keyframes glow{
-
-    from{
-
-        transform:rotate(0deg);
-
-    }
-
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
 
 }
+
 
 
 
@@ -398,23 +588,27 @@ nav a:hover{
     height:230px;
 
 
+    border-radius:28px;
+
+
+
     background:
+
 
     linear-gradient(
 
     135deg,
 
-    rgba(255,255,255,.08),
+    rgba(255,255,255,.10),
 
     rgba(255,255,255,.02)
 
     );
 
 
-    backdrop-filter:blur(20px);
 
+    backdrop-filter:blur(25px);
 
-    border-radius:26px;
 
 
     position:relative;
@@ -425,44 +619,82 @@ nav a:hover{
 
 
 
+
+
 .card-overlay{
 
 
     position:absolute;
 
+
     inset:0;
+
 
 
     display:flex;
 
+
     justify-content:center;
+
 
     align-items:center;
 
 
-    background:rgba(0,0,0,.5);
+
+    background:rgba(0,0,0,.45);
+
 
 
     opacity:0;
 
+
+
     transition:.4s;
 
+
 }
+
+
+
 
 
 .card-image:hover .card-overlay{
 
+
     opacity:1;
 
+
 }
+
+
 
 
 
 .project-card h3{
 
+
     margin-top:20px;
 
+
     font-size:28px;
+
+
+}
+
+
+
+
+.project-card span{
+
+
+    display:block;
+
+
+    margin-top:8px;
+
+
+    opacity:.55;
+
 
 }
 
@@ -471,13 +703,16 @@ nav a:hover{
 
 
 
-/* SIGNATURE */
+
+
+/* SIGNATURE EXPERIENCE */
 
 
 .signature{
 
 
     padding:150px 8%;
+
 
     text-align:center;
 
@@ -488,65 +723,26 @@ nav a:hover{
 
 .signature h2{
 
+
     font-size:60px;
 
+
 }
+
 
 
 .signature p{
 
+
     margin-top:25px;
+
 
     opacity:.7;
 
-}
-
-
-
-
-
-
-/* FEATURED */
-
-
-.featured{
-
-
-    padding:100px 8%;
 
 }
 
 
-.featured h2{
-
-    font-size:50px;
-
-}
-
-
-.featured-grid{
-
-    margin-top:50px;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-
-
-.featured-grid div{
-
-    height:250px;
-
-    background:#050505;
-
-    border-radius:25px;
-
-}
 
 
 
@@ -558,29 +754,98 @@ nav a:hover{
 
 .contact{
 
+
     padding:120px 8%;
 
+
+    text-align:center;
+
+
 }
+
+
 
 
 .contact h2{
 
+
     font-size:55px;
+
 
 }
 
 
-.contact a{
 
-    display:block;
 
-    margin-top:30px;
+.contact p{
+
+
+    margin-top:20px;
+
+
+    opacity:.7;
+
+
+}
+
+
+
+
+
+.contact-buttons{
+
+
+    margin-top:50px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:20px;
+
+
+    flex-wrap:wrap;
+
+
+}
+
+
+
+
+.contact-buttons a{
+
+
+    padding:16px 35px;
+
 
     color:white;
 
+
     text-decoration:none;
 
+
+    border-radius:50px;
+
+
+
+    background:rgba(255,255,255,.08);
+
+
+
+    backdrop-filter:blur(20px);
+
+
+
+    border:1px solid rgba(255,255,255,.15);
+
+
 }
+
+
+
 
 
 
@@ -591,15 +856,22 @@ nav a:hover{
 
 footer{
 
+
     padding:50px 8%;
+
 
     border-top:1px solid rgba(255,255,255,.1);
 
+
+
     display:flex;
+
 
     justify-content:space-between;
 
+
 }
+
 
 
 
@@ -609,11 +881,14 @@ footer{
 @media(max-width:700px){
 
 
+
 nav{
 
-    display:none;
+display:none;
 
 }
+
+
 
 
 .project-card{
@@ -623,17 +898,20 @@ nav{
 }
 
 
-.signature h2,
-.contact h2{
 
-    font-size:38px;
+.section-title h2{
+
+    font-size:40px;
 
 }
 
 
-.featured-grid{
 
-    grid-template-columns:1fr;
+
+.signature h2,
+.contact h2{
+
+    font-size:38px;
 
 }
 
