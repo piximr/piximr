@@ -1,131 +1,173 @@
-// Hero smooth entrance
+/*==================================================
+PIXIMR V2
+script.js
+==================================================*/
+
+
+
+/*==========================
+LOADER
+==========================*/
 
 window.addEventListener("load", () => {
 
-
-    const hero = document.querySelector(".hero-content");
-
-
-    hero.style.opacity = "0";
-
-    hero.style.transform = "translateY(40px)";
-
-
-
-    setTimeout(()=>{
-
-
-        hero.style.transition = "1.2s ease";
-
-
-        hero.style.opacity = "1";
-
-
-        hero.style.transform = "translateY(0)";
-
-
-
-    },300);
-
-
+    document.body.classList.add("loaded");
 
 });
 
 
 
+/*==========================
+REVEAL ON SCROLL
+==========================*/
+
+const revealItems = document.querySelectorAll(
+
+".project-card, .signature-content, .contact-content"
+
+);
+
+const revealObserver = new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+
+threshold:.15
+
+}
+
+);
+
+revealItems.forEach(item=>{
+
+item.classList.add("reveal");
+
+revealObserver.observe(item);
+
+});
 
 
 
+/*==========================
+HORIZONTAL SCROLL
+Desktop only
+==========================*/
 
-// Desktop horizontal scroll
+const slider = document.querySelector(".project-slider");
 
+if(slider){
 
-const carousel = document.querySelector(".carousel");
+slider.addEventListener("wheel",(e)=>{
 
+if(window.innerWidth>900){
 
+e.preventDefault();
 
-if(carousel){
+slider.scrollLeft += e.deltaY;
 
+}
 
-    carousel.addEventListener("wheel",(e)=>{
-
-
-        if(window.innerWidth > 700){
-
-
-            e.preventDefault();
-
-
-            carousel.scrollLeft += e.deltaY;
-
-
-
-        }
-
-
-
-    });
-
-
+},{passive:false});
 
 }
 
 
 
+/*==========================
+PARALLAX AMBIENT LIGHT
+==========================*/
+
+const ambient1 = document.querySelector(".ambient-1");
+const ambient2 = document.querySelector(".ambient-2");
+
+document.addEventListener("mousemove",(e)=>{
+
+const x = e.clientX / window.innerWidth;
+const y = e.clientY / window.innerHeight;
+
+ambient1.style.transform =
+`translate(${x*70}px,${y*40}px)`;
+
+ambient2.style.transform =
+`translate(${-x*60}px,${-y*35}px)`;
+
+});
 
 
 
+/*==========================
+GLASS CARD TILT
+==========================*/
 
-// Project card reveal animation
+document.querySelectorAll(".project-card").forEach(card=>{
 
+card.addEventListener("mousemove",(e)=>{
 
-const cards = document.querySelectorAll(".project-card");
+const rect = card.getBoundingClientRect();
 
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
 
+const rx = -(y-rect.height/2)/18;
+const ry = (x-rect.width/2)/18;
 
-const observer = new IntersectionObserver((entries)=>{
+card.style.transform =
+`perspective(1200px)
+rotateX(${rx}deg)
+rotateY(${ry}deg)
+translateY(-10px)`;
 
+});
 
-    entries.forEach(entry=>{
+card.addEventListener("mouseleave",()=>{
 
+card.style.transform="";
 
-        if(entry.isIntersecting){
+});
 
-
-            entry.target.style.opacity="1";
-
-
-            entry.target.style.transform="translateY(0)";
-
-
-        }
-
-
-    });
-
-
-
-},{threshold:.2});
-
-
+});
 
 
 
-cards.forEach(card=>{
+/*==========================
+SMOOTH NAVBAR
+==========================*/
 
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
-    card.style.opacity="0";
+link.addEventListener("click",(e)=>{
 
+const target = document.querySelector(
 
-    card.style.transform="translateY(50px)";
+link.getAttribute("href")
 
+);
 
-    card.style.transition="all .8s ease";
+if(target){
 
+e.preventDefault();
 
+target.scrollIntoView({
 
-    observer.observe(card);
+behavior:"smooth"
 
+});
 
+}
+
+});
 
 });
