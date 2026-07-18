@@ -1,10 +1,13 @@
 
+// Hero entrance animation
+
 window.addEventListener("load", () => {
 
     const hero = document.querySelector(".hero-content");
 
     hero.style.opacity = "0";
-    hero.style.transform = "translateY(30px)";
+    hero.style.transform = "translateY(40px)";
+
 
     setTimeout(() => {
 
@@ -12,6 +15,26 @@ window.addEventListener("load", () => {
         hero.style.opacity = "1";
         hero.style.transform = "translateY(0)";
 
-    }, 300);
+    },300);
 
 });
+
+
+
+
+// Horizontal portfolio wheel scroll
+
+const carousel = document.querySelector(".carousel");
+
+
+if(carousel){
+
+    carousel.addEventListener("wheel", (event)=>{
+
+        event.preventDefault();
+
+        carousel.scrollLeft += event.deltaY;
+
+    });
+
+}
