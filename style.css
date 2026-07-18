@@ -1599,3 +1599,120 @@ RESPONSIVE
     }
 
 }
+/* Piximr AI Agent Bubble */
+
+.piximr-ai-bubble {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+    0 8px 40px rgba(0,0,0,0.15);
+
+    overflow: hidden;
+
+    z-index: 9999;
+}
+
+
+/* Inner AI light */
+
+.ai-core {
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    color: white;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,.6),
+    rgba(255,255,255,.1)
+    );
+
+    backdrop-filter: blur(10px);
+
+    animation: breathe 3s infinite ease-in-out;
+}
+
+
+/* Moving glow */
+
+.ai-glow {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+    radial-gradient(
+    circle,
+    rgba(255,255,255,.8),
+    transparent 60%
+    );
+
+    animation: glowmove 4s infinite linear;
+}
+
+
+/* Breathing animation */
+
+@keyframes breathe {
+
+    0%,100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255,255,255,.4);
+    }
+
+    50% {
+        transform: scale(1.12);
+        box-shadow: 0 0 30px rgba(255,255,255,.9);
+    }
+
+}
+
+
+/* Light movement animation */
+
+@keyframes glowmove {
+
+    0% {
+        transform: translate(-30%,-30%);
+    }
+
+    50% {
+        transform: translate(30%,30%);
+    }
+
+    100% {
+        transform: translate(-30%,-30%);
+    }
+
+}
