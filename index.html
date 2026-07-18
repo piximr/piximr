@@ -497,11 +497,46 @@ setTimeout(function(){
 
 
 
-orb.onclick = function(){
+function openChat(){
 
     chat.style.display = "block";
 
+
+    setTimeout(function(){
+
+        const messages =
+        document.getElementById("chat-messages");
+
+
+        messages.innerHTML = `
+        <p>
+        Hello Sir,<br>
+        I'm Piximr AI. It's a pleasure to meet you.<br>
+        I’d love to know what brings you to Piximr today.
+        </p>
+        `;
+
+
+    },500);
+
+
+}
+
+
+
+orb.onclick = function(){
+
+    openChat();
+
 };
+
+
+
+setTimeout(function(){
+
+    openChat();
+
+},20000);
 
 
 
