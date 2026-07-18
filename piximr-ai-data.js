@@ -1,32 +1,138 @@
-const piximrAI = {
+// Piximr AI Engine v1
 
-name: "Piximr AI",
-
-intro:
-"Hello Sir, I'm Piximr AI. It's a pleasure to meet you. I’d love to know what brings you to Piximr today.",
-
-
-about:
-"Piximr is a creative visualization studio focused on transforming ideas into powerful visual experiences.",
+const orb = document.querySelector(".piximr-ai-bubble");
+const chat = document.getElementById("piximr-chat");
+const closeBtn = document.getElementById("chat-close");
+const messages = document.getElementById("chat-messages");
 
 
-services:[
-"Architectural Visualization",
-"3D Rendering",
-"3D Animation",
-"Product Visualization",
-"Creative Design"
-],
+let opened = false;
 
 
-strength:
-"Piximr combines artistic vision with modern 3D technology to create visuals with emotion, storytelling and detail.",
+// Show AI orb after 10 seconds
+
+setTimeout(() => {
+
+    orb.style.display = "flex";
+
+}, 10000);
 
 
-price:
-"Every project has unique creative requirements. I would love to connect you with our artist so we can understand your vision better.",
+
+// Open chat
+
+function openChat(){
+
+    chat.style.display = "block";
+
+    if(!opened){
+
+        opened = true;
+
+        setTimeout(() => {
+
+            typeMessage(getGreeting());
+
+        },500);
+
+    }
+
+}
 
 
-contact:
-"I would be happy to connect you with our creative team. Please share your project details and contact information."
+
+// Close chat
+
+closeBtn.onclick = () => {
+
+    chat.style.display = "none";
+
 };
+
+
+
+// Click orb
+
+orb.onclick = () => {
+
+    openChat();
+
+};
+
+
+
+// Auto open after 20 seconds
+
+setTimeout(() => {
+
+    openChat();
+
+},20000);
+
+
+
+
+// Typing effect
+
+function typeMessage(text){
+
+    let p = document.createElement("p");
+
+    messages.appendChild(p);
+
+
+    let i = 0;
+
+
+    let typing = setInterval(()=>{
+
+        p.innerHTML += text.charAt(i);
+
+        i++;
+
+
+        if(i >= text.length){
+
+            clearInterval(typing);
+
+        }
+
+
+    },35);
+
+}
+
+
+
+
+// Time based greeting
+
+function getGreeting(){
+
+    let hour = new Date().getHours();
+
+    let greeting;
+
+
+    if(hour < 12){
+
+        greeting = "Good morning";
+
+    }
+    else if(hour < 18){
+
+        greeting = "Good afternoon";
+
+    }
+    else{
+
+        greeting = "Good evening";
+
+    }
+
+
+    return `${greeting} Sir.<br>
+    I'm Piximr AI. It's a pleasure to meet you.<br>
+    I’d love to know what brings you to Piximr today.`;
+
+}
