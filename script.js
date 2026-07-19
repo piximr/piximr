@@ -445,7 +445,7 @@ setTimeout(()=>{
 
 addBotMessage(
 
-"Thank you for reaching out to Piximr.Our AI assistant is currently being developed to serve you better<br>Meanwhile, Please Contact us via Whatsapp: +8801825558999."
+"Thank you for your message.<br>I will help you shortly."
 
 );
 
