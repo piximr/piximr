@@ -2716,3 +2716,62 @@ height:60px;
 }
 
 }
+/*==================================================
+PREMIUM NAVBAR
+==================================================*/
+
+.navbar{
+
+justify-content:space-between;
+
+padding:24px 60px;
+
+}
+
+.nav-logo{
+
+flex-shrink:0;
+
+}
+
+.nav-menu{
+
+margin-left:auto;
+
+display:flex;
+
+align-items:center;
+
+gap:34px;
+
+}
+
+.nav-menu a{
+
+font-size:15px;
+
+font-weight:500;
+
+letter-spacing:.3px;
+
+transition:.35s;
+
+}
+
+.nav-menu a:hover{
+
+opacity:1;
+
+transform:translateY(-2px);
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+padding:18px 20px;
+
+}
+
+}
