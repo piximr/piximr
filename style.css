@@ -1368,75 +1368,82 @@ JOURNAL PAGE
 
 }
 /*==================================================
-ABOUT PAGE
+ABOUT PAGE V2
 ==================================================*/
 
-.about-section{
+.about-hero{
 
-    width:min(1100px,90%);
-    margin:140px auto 100px;
+    min-height:100vh;
 
-}
+    display:flex;
 
+    align-items:center;
 
-.about-content{
+    justify-content:center;
 
     text-align:center;
 
+    padding:140px 20px 100px;
+
 }
 
+.about-story{
 
-.about-content h2{
+    width:min(1200px,90%);
 
-    font-size:clamp(42px,5vw,64px);
+    margin:120px auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.story-left h2{
+
+    font-size:clamp(48px,6vw,72px);
+
+    line-height:1.05;
 
     letter-spacing:-2px;
 
-    margin-bottom:30px;
-
 }
 
-
-.about-content p{
-
-    max-width:800px;
-
-    margin:20px auto;
+.story-right p{
 
     color:var(--text);
 
-    font-size:18px;
+    font-size:19px;
 
-    line-height:1.9;
+    line-height:2;
+
+    margin-bottom:24px;
 
 }
-
-
-/*==========================
-SERVICES
-==========================*/
 
 .services{
 
-    width:min(1100px,90%);
+    width:min(1200px,92%);
 
-    margin:100px auto;
+    margin:140px auto;
 
 }
-
 
 .services h2{
 
     text-align:center;
 
-    font-size:clamp(40px,5vw,60px);
+    font-size:clamp(42px,5vw,64px);
+
+    margin-bottom:60px;
 
     letter-spacing:-2px;
 
-    margin-bottom:50px;
-
 }
-
 
 .service-grid{
 
@@ -1444,159 +1451,99 @@ SERVICES
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:25px;
+    gap:28px;
 
 }
 
-
 .service-card{
 
-    padding:35px;
+    padding:40px;
 
-    border-radius:28px;
-
-    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
 
     background:rgba(255,255,255,.05);
 
     backdrop-filter:blur(28px);
 
+    border:1px solid rgba(255,255,255,.08);
+
     transition:var(--transition);
 
 }
 
-
 .service-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 
     border-color:rgba(123,92,255,.35);
 
-}
+    box-shadow:0 25px 60px rgba(123,92,255,.15);
 
+}
 
 .service-card h3{
 
-    font-size:24px;
+    font-size:26px;
 
-    margin-bottom:15px;
+    margin-bottom:18px;
 
 }
-
 
 .service-card p{
 
     color:var(--text);
 
-    line-height:1.8;
-
-}
-
-
-/*==========================
-PHILOSOPHY
-==========================*/
-
-.philosophy{
-
-    width:min(900px,90%);
-
-    margin:120px auto;
-
-    text-align:center;
-
-}
-
-
-.philosophy h2{
-
-    font-size:clamp(40px,5vw,60px);
-
-    letter-spacing:-2px;
-
-    margin-bottom:25px;
-
-}
-
-
-.philosophy p{
-
-    color:var(--text);
-
-    font-size:18px;
-
     line-height:1.9;
 
 }
 
+.philosophy{
 
-/*==========================
-CONTACT CTA
-==========================*/
-
-.contact-cta{
-
-    text-align:center;
-
-    padding:100px 0;
+    padding:160px 0;
 
 }
 
+.philosophy h2{
 
-.contact-cta h2{
+    font-size:clamp(46px,6vw,72px);
 
-    font-size:clamp(38px,5vw,60px);
+    letter-spacing:-2px;
 
     margin-bottom:30px;
 
 }
 
+.philosophy p{
 
-.contact-cta a{
+    max-width:760px;
 
-    display:inline-block;
+    margin:auto;
 
-    padding:16px 34px;
+    color:var(--text);
 
-    border-radius:999px;
+    line-height:2;
 
-    text-decoration:none;
-
-    color:white;
-
-    border:1px solid rgba(255,255,255,.12);
-
-    background:
-
-    linear-gradient(
-    135deg,
-    rgba(123,92,255,.30),
-    rgba(46,91,255,.20)
-    );
-
-    transition:var(--transition);
+    font-size:20px;
 
 }
-
-
-.contact-cta a:hover{
-
-    transform:translateY(-5px);
-
-}
-
-
-/*==========================
-RESPONSIVE
-==========================*/
 
 @media(max-width:900px){
 
-    .service-grid{
+.about-story{
 
-        grid-template-columns:1fr;
+grid-template-columns:1fr;
 
-    }
+gap:40px;
+
+text-align:center;
+
+}
+
+.service-grid{
+
+grid-template-columns:1fr;
+
+}
 
 }
     /* Piximr AI Agent Bubble */
